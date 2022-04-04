@@ -1,0 +1,61 @@
+@import "../mixin";
+@import "../variable";
+
+.card {
+  display: flex;
+  height: 10rem;
+  padding: 0 1rem;
+  @include mq-up(ms) {
+    height: 15rem;
+  }
+}
+
+.image {
+  position: relative;
+  width: 10rem;
+  @include mq-up(ms) {
+    width: 15rem;
+  }
+}
+
+.info {
+  margin-left: 2rem;
+  width: calc(100% - 10rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @include mq-up(ms) {
+    width: calc(100% - 15rem);
+  }
+  .meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    color: $dark;
+    font-size: 1.2rem;
+  }
+}
+.title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: $dark;
+  @include mq-up(ms) {
+    font-size: 1.8rem;
+  }
+  @include mq-up(lg) {
+    font-size: 2rem;
+  }
+}
+.description {
+  font-size: 1.5rem;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  color: $dark;
+  margin: 0;
+  @include mq-down(ms) {
+    display: none;
+  }
+}

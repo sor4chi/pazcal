@@ -7,17 +7,16 @@ import TwitterSvg from "components/svgs/Twitter";
 import styles from "styles/components/calculator.module.scss";
 import { PersedRank } from "types/rank";
 
-type Props = {
+interface Props {
   ranks: PersedRank[];
-  id: number;
-};
+}
 
 const Rank = ({ ranks }: Props) => {
   const [isFirst, setIsFirst] = useState<boolean>(true);
   const [fromRank, setFromRank] = useState<PersedRank["rank"] | null>();
   const [toRank, setToRank] = useState<PersedRank["rank"] | null>();
   const [result, setResult] = useState<PersedRank["experience"]>(0);
-  const [twitterShareUrl, setTwitterShareUrl] = useState<string>("");
+  const [twitterShareUrl, setTwitterShareUrl] = useState<string>("/");
 
   const calculate = (): void => {
     const from: PersedRank | undefined = ranks.find(
